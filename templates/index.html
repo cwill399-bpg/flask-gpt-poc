@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Bot</title>
+</head>
+<body>
+    <h1>Welcome to GPT Bot</h1>
+
+    <form method="POST">
+        <label for="prompt">Enter your prompt:</label>
+        <input type="text" id="prompt" name="prompt" placeholder="Ask me anything..." required>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if response %}
+        <h2>Response:</h2>
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
